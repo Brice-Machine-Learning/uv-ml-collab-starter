@@ -1,11 +1,20 @@
 [project]
 name = "uv-ml-collab-starter"
 version = "0.1.0"
-description = "Add your description here"
+description = "A collaborative machine learning starter project for practicing uv-based environment management, reproducible workflows, and a simple end-to-end ML pipeline."
 readme = "README.md"
 requires-python = ">=3.12"
+
 dependencies = [
+    "jupyterlab>=4.5.2",
     "numpy>=2.4.1",
     "pandas>=2.3.3",
     "seaborn>=0.13.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "black",
+    "ruff",
 ]
