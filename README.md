@@ -131,6 +131,12 @@ See the student README for guidance on the problem statement.  It can be found h
 Examples (this repo uses a `/scripts` directory for runnable tasks):
 
 - Run data from `scripts/download_data.py` into `data/raw/`
+  - from the repo root:
+
+  ```bash
+  python scripts/download_data.py
+  ```
+
 - Explore data in notebooks/
 - Add training logic in src/
 - Experiment, break things, fix them — that’s the point
