@@ -70,6 +70,8 @@ This rule exists to:
 - Mirror professional Git workflows
 - Avoid accidental overwrites or confusion
 
+The `main` branch exists only as a clean, immutable starting point.
+
 ---
 
 ## 🧑‍💻 Recommended Workflow (Step-by-Step)
@@ -81,7 +83,9 @@ git clone git@github.com:<your-org>/uv-ml-collab-starter.git
 cd uv-ml-collab-starter
 ```
 
-### 2️⃣ Create your own branch from `dev`
+### 2️⃣ Create your own branch from `main`
+
+All student work begins from the `main` branch.  You do not need to switch branches before creating your own — your branch should be created directly from `main`.
 
 ```bash
 git switch -c dev-<your-name>
@@ -100,7 +104,9 @@ uv sync
 source .venv/bin/activate
 ```
 
-Advanced users can try:
+Advanced users can try installing the development tools as well.
+
+Note: `--group dev` **adds** development tools on top of the base dependencies — it does not replace `uv sync`.
 
 ```bash
 uv sync
@@ -108,21 +114,26 @@ uv sync --group dev
 source .venv/bin/activate
 ```
 
-_**What does --group dev do?**
-It installs only the dependencies needed for development, skipping extras like testing or documentation tools.
+_**What does `--group dev` do?**_
 
-This keeps your environment lean and focused on coding. You can always run `uv sync` without `--group` later to get everything if needed.
+It installs the optional **development dependency group**, which includes tools such as testing and code formatting utilities.
 
-In this project, using `--group dev` is optional and mainly for practice.  It won't break anything if you skip it. It will just install testing libraries and CI tools that you may not use right away.
+In this project, using `--group dev` is optional and mainly for practice.  
+Skipping it will still allow you to run notebooks and core ML code.
+
+You can always run `uv sync --group dev` later if you want the additional tools.
 
 ### 4️⃣ Do your work
 
-Examples:
+Examples (this repo uses a `/scripts` directory for runnable tasks):
 
 - Run data from `scripts/download_data.py` into `data/raw/`
 - Explore data in notebooks/
 - Add training logic in src/
 - Experiment, break things, fix them — that’s the point
+
+Note: The `src/` directory is included to expose students to standard Python project structure.  
+Most hands-on work in this repo intentionally uses the `scripts/` directory.
 
 ### 5️⃣ Commit your changes
 
