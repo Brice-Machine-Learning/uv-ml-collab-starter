@@ -125,6 +125,9 @@ You can always run `uv sync --group dev` later if you want the additional tools.
 
 ### 4️⃣ Do your work
 
+See the student README for guidance on the problem statement.  It can be found here:
+`docs/00_overview/student-README.md`
+
 Examples (this repo uses a `/scripts` directory for runnable tasks):
 
 - Run data from `scripts/download_data.py` into `data/raw/`
